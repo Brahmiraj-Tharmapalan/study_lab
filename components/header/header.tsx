@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import SL_Logo from "@/public/Logo/SL_Transparent_Logo.png";
 import SL_Logo_Name from "@/public/Logo/Logo_name_1.png";
 import { cn } from "@/lib/utils";
-import { StarBorder } from "./star-border";
+import { StarBorder } from "../common/star-border";
 
 type HeaderParams = {
   href: string;

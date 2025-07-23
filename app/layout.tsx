@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Philosopher, Artifika } from "next/font/google";
 import "./globals.css";
 import BackgroundPattern from "@/components/common/BackgroundPattern";
-import { Header } from "@/components/common/header";
-import { SidebarWrapper } from "@/components/sidebar/SidebarWrapper"; // ✅ Correct import
+import { SidebarWrapper } from "@/components/sidebar/SidebarWrapper";
+import { Header } from "@/components/header/header";
 
 const philosopher = Philosopher({
   subsets: ["latin"],
