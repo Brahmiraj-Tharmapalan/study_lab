@@ -3,7 +3,7 @@ import { Philosopher, Artifika } from "next/font/google";
 import "./globals.css";
 import BackgroundPattern from "@/components/common/BackgroundPattern";
 import { Header } from "@/components/common/header";
-import { SidebarCard } from "@/components/common/sidebar";
+import { SidebarWrapper } from "@/components/sidebar/SidebarWrapper"; // ✅ Correct import
 
 const philosopher = Philosopher({
   subsets: ["latin"],
@@ -24,21 +24,21 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
       <body
         className={`${philosopher.variable} ${artifika.variable} ${artifika.className} antialiased overflow-x-hidden max-w-7xl mx-auto px-4`}
       >
-        {/* <BackgroundPattern /> */}
+        <BackgroundPattern />
         <Header href={"/"} type={"Login"} />
-          <div className="flex flex-row gap-6">
-            <aside className="lg:w-1/4 hidden lg:block">
-              <SidebarCard />
-            </aside>
-            <main className="lg:w-3/4 w-full">{children}</main>
+        <div className="flex flex-row gap-6">
+          <aside className="lg:w-1/4 hidden lg:block">
+            <SidebarWrapper />
+          </aside>
+          <main className="lg:w-3/4 w-full">{children}</main>
         </div>
       </body>
     </html>

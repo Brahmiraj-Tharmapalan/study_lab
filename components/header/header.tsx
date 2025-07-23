@@ -14,19 +14,11 @@ type HeaderParams = {
 export function Header(params: HeaderParams) {
   const { href, type } = params;
   return (
-    <header
-    className={cn(
-      "mt-5 max-w-7xl",
-          type === "SignIn" && "ani-fadeDown"
-        )}
-        >
-        <StarBorder>
+    <header className={cn("mt-5", type === "SignIn" && "ani-fadeDown")}>
+      <StarBorder className="w-full max-w-7xl shadow-[4px_23px_197px_49px_rgba(71,_17,_83,_0.48)]" color="white" speed="8s">
         <div className="relative">
-          {/* <div className="absolute -inset-2 rounded-lg bg-gradient-to-bl from-gray-600 via-sky-600 to-neutral-600 opacity-50 blur-2xl z-0"></div> */}
           <div
-            className={cn(
-              "relative flex h-16 items-center justify-between px-5 rounded-bl-lg rounded-tr-lg border border-white/15 bg-[#131316] shadow-[inset_0px_1px_0px_0px_rgba(255,255,255,0.20)] overflow-hidden z-10"
-            )}
+            className={cn("relative flex items-center justify-between px-5")}
           >
             <Link href="/" className="flex items-center gap-2">
               <Image src={SL_Logo} alt="Logo" width={48} height={48} />
@@ -45,7 +37,7 @@ export function Header(params: HeaderParams) {
             </div>
           </div>
         </div>
-    </StarBorder>
-      </header>
+      </StarBorder>
+    </header>
   );
 }

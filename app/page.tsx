@@ -63,12 +63,11 @@ export default function page() {
   return (
     <div className="flex flex-col items-center min-h-screen pt-8 bg-transparent">
       {/* Responsive grid of cards */}
-      <StarBorder>hello</StarBorder>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
+      {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
         {sampleProfiles.map((profile, idx) => (
           <ProfileCard key={profile.name + idx} {...profile} />
         ))}
-      </div>
+      </div> */}
     </div>
   )
 }

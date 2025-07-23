@@ -133,36 +133,16 @@
   --shadow-2xl: 0px 2px 3px 0px hsl(0 0% 0% / 0.40);
 }
 
-
-
-body {
-  letter-spacing: var(--tracking-normal);
-  font-family: var(--text-family), serif;
-}
-
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border;
   }
-
   body {
-    @apply bg-background text-foreground antialiased;
-    font-family: var(--text-family), serif;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    font-family: var(--display-family), serif;
-  }
-
-  .font-display {
-    font-family: var(--display-family), serif;
-  }
-
-  .font-text {
-    font-family: var(--text-family), serif;
+    @apply bg-background text-foreground;
   }
 }
 
+/* Login Button Animations */
 .shine-glow-btn {
   position: relative;
   overflow: hidden;
@@ -206,35 +186,17 @@ body {
   filter: drop-shadow(0 0 2px #00eaff88) drop-shadow(0 0 4px #00eaff33);
 }
 
-/* Add custom animations manually here */
+/* Star-border keyframes */
+@keyframes star-movement-bottom {
+  0%   { transform: translate(0,0); opacity:1; }
+  100% { transform: translate(-100%,0); opacity:0; }
+}
+@keyframes star-movement-top {
+  0%   { transform: translate(0,0); opacity:1; }
+  100% { transform: translate(100%,0); opacity:0; }
+}
+
 @layer utilities {
-  @keyframes star-movement-bottom {
-    0% {
-      transform: translate(0%, 0%);
-      opacity: 1;
-    }
-    100% {
-      transform: translate(-100%, 0%);
-      opacity: 0;
-    }
-  }
-
-  @keyframes star-movement-top {
-    0% {
-      transform: translate(0%, 0%);
-      opacity: 1;
-    }
-    100% {
-      transform: translate(100%, 0%);
-      opacity: 0;
-    }
-  }
-
-  .animate-star-movement-bottom {
-    animation: star-movement-bottom linear infinite alternate;
-  }
-
-  .animate-star-movement-top {
-    animation: star-movement-top linear infinite alternate;
-  }
+  .animate-star-movement-bottom { animation: star-movement-bottom linear infinite alternate; }
+  .animate-star-movement-top    { animation: star-movement-top    linear infinite alternate; }
 }
